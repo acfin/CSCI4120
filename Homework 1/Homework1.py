@@ -76,7 +76,7 @@ def classifier(k):
 def main():
     kAccuracies = []
     totalAccuracy = 0
-    for k in range(1,20):
+    for k in range(1,21):
         print("Running classifier for k = " + str(k))
         totalAccuracy = 0
         for attempt in range(5):
@@ -85,10 +85,10 @@ def main():
             totalAccuracy += accuracy
             #print('Accuracy: ' + repr(accuracy) + '%')
         avgAccuracy = totalAccuracy/5
-        print('\tAccuracy for k={} is {}'.format(k+1, avgAccuracy))
+        print('\tAccuracy for k={} is {}'.format(k, avgAccuracy))
         kAccuracies.append(avgAccuracy)
 
-    x = np.arange(1,20)
+    x = np.arange(1,21)
     plt.plot(x, kAccuracies)
     plt.show()
 
