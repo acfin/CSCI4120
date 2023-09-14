@@ -78,6 +78,8 @@ def main():
     totalAccuracy = 0
     highestK = 20
     cyclesPerK = 5
+    bestK = 0
+    bestAccuracy = 0
     for k in range(1,highestK+1):
         print("Running classifier for k = " + str(k))
         totalAccuracy = 0
@@ -89,9 +91,17 @@ def main():
         avgAccuracy = totalAccuracy/cyclesPerK
         print('\tAccuracy for k={} is {}'.format(k, avgAccuracy))
         kAccuracies.append(avgAccuracy)
+        if (avgAccuracy>bestAccuracy):
+            bestK = k
+            bestAccuracy = avgAccuracy
+    
+    print('The K with the highest accuracy was {} with an accuracy of {}'.format(bestK,bestAccuracy))
 
     x = np.arange(1,highestK+1)
     plt.plot(x, kAccuracies)
+    plt.title("Accuracy vs K")
+    plt.xlabel("K")
+    plt.ylabel("Accuracy")
     plt.xticks(range(1,highestK+1))
     plt.show()
 
