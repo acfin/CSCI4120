@@ -49,15 +49,17 @@ def classifier(k):
     testSet=[]
     split = 0.67
     url = 'https://raw.githubusercontent.com/ruiwu1990/CSCI_4120/master/KNN/iris.data'
+
     print("\tLoading dataset...")
     trainingSet, testSet = loadDataset(url, 0.66)
     #print('Train set: ' + repr(len(trainingSet)))
     #print('Test set: ' + repr(len(testSet)))
-    
     targetNames = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
+
     print("\tPreparing training data...")
     trainX = [i[0:4] for i in trainingSet]
     trainY = parseTargets(trainingSet, targetNames, 4)
+
     print("\tPreparing testing data...")
     testX = [i[0:4] for i in testSet]
     testY = parseTargets(testSet, targetNames, 4)
@@ -77,7 +79,7 @@ def main():
     kAccuracies = []
     totalAccuracy = 0
     highestK = 20
-    cyclesPerK = 5
+    cyclesPerK = 10
     bestK = 0
     bestAccuracy = 0
     for k in range(1,highestK+1):
@@ -99,9 +101,10 @@ def main():
 
     x = np.arange(1,highestK+1)
     plt.plot(x, kAccuracies)
-    plt.title("Accuracy vs K")
+    plt.title("K vs Accuracy")
     plt.xlabel("K")
     plt.ylabel("Accuracy")
+    plt.ylim(0.6,1)
     plt.xticks(range(1,highestK+1))
     plt.show()
 
