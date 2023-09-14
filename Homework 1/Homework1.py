@@ -90,6 +90,7 @@ def main():
 
     x = np.arange(1,21)
     plt.plot(x, kAccuracies)
+    plt.xticks(range(1,21))
     plt.show()
 
 main()
