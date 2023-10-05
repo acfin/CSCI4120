@@ -4,6 +4,8 @@ from yellowbrick.cluster import KElbowVisualizer
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+import seaborn as sns; sns.set() 
 import numpy as np
 from scipy.stats import mode
 
@@ -32,3 +34,11 @@ print(f"Best K Accuracy: {accuracy}")
 print("Confusion Matrix:")
 print(matrix)
 visualizer.show()
+
+from sklearn.metrics import confusion_matrix
+mat = confusion_matrix(y_true, clusters)
+sns.heatmap(mat.T, square=True, annot=True, fmt='d', cbar=False,
+            xticklabels=[0, 1 , 2, 3],
+            yticklabels=[0, 1 , 2, 3])
+plt.xlabel('true label')
+plt.ylabel('predicted label');
