@@ -7,6 +7,6 @@ Lucas Harrison - harrisonl19@students.ecu.edu
 
 Open code and run exercises 1 and 2 in Jupyter Notebook.
 
-![image](ex1Results.png)
+![image](ex1Fig.png)
 
-![image](ex2Results.png)
+![image](ex2Fig.png)
