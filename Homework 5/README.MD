@@ -8,9 +8,15 @@ Lucas Harrison - harrisonl19@students.ecu.edu
 Open code and run all cells in Jupyter Notebook
 
 ## Results
+Average Accuracy: 0.9209
+Average Accuracy per Feature: 0.4604
 
-Lasso: Best alpha is greater than ~0.985
-    Best score is typically greater than ~0.85
-
-Ridge: Best alpha is greater than ~0.985
-    Best score is typically greater than ~0.85
+##Hyperparameters
+n_estimators = 10
+min_samples_split = 5
+min_samples_leaf= 2
+max_features: log2
+max_depth': None
+criterion': gini
+class_weight: balanced 
+bootstrap: True
