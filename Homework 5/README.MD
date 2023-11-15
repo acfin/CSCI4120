@@ -11,7 +11,7 @@ Open code and run all cells in Jupyter Notebook
 Average Accuracy: 0.9209
 Average Accuracy per Feature: 0.4604
 
-##Hyperparameters
+## Hyperparameters
 n_estimators = 10
 min_samples_split = 5
 min_samples_leaf= 2
